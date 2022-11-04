@@ -9,7 +9,7 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByTag("page").sort((a, b) => {
       if (a.url === '/') return -1
       if (b.url === '/') return -1
-      return a - b
+      return a.title.localeCompare(b.title)
     });
   });
   return {
