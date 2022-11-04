@@ -6,7 +6,7 @@ import Common.Mesures exposing (Ligne(..), TaillesRanges, centimetres, fromCenti
 import Common.Prix as Prix
 import Common.Surface exposing (Surface)
 import Elements.Essence as Essence exposing (Essence(..))
-import Elements.Pietement as Pietement exposing (Position)
+import Elements.Pietement as Pietement exposing (Pietement)
 import Elements.Table as Table exposing (Table)
 import Elements.Type as Type exposing (TableType)
 import Form exposing (Form)
@@ -70,7 +70,7 @@ type Msg
     | ValidateSurface
     | TableTypeChanged TableType
     | EssenceChanged Essence
-    | PositionPietementChanged Position
+    | PositionPietementChanged Pietement
     | Reset
 
 
@@ -159,7 +159,7 @@ view model =
                             ]
 
                         Surface ->
-                            surfaceFields form.surface (Type.tailles (form.type_ |> Maybe.withDefault Type.AManger))
+                            surfaceFields form.surface (Type.tailles (form.type_ |> Maybe.withDefault Type.TableAManger))
 
                         Pietement ->
                             [ h2 [] [ text "Type de pied" ]

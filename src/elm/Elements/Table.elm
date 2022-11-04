@@ -1,18 +1,19 @@
 module Elements.Table exposing (..)
 
-import Common.Mesures as Mesures exposing (Ligne(..))
+import Common.Mesures exposing (Ligne(..))
 import Common.Prix as Prix exposing (Prix)
 import Common.Surface as Surface exposing (Surface)
 import Elements.Essence as Essence exposing (Essence(..))
-import Elements.Pietement as Pietement exposing (Position)
+import Elements.Pietement as Pietement exposing (Pietement)
 import Elements.Type as Type exposing (TableType)
+import GrilleTarifaire
 
 
 type alias Table =
     { type_ : TableType
     , essence : Essence
     , surface : Surface
-    , pietement : Position
+    , pietement : Pietement
     }
 
 
@@ -27,14 +28,14 @@ recapitulatif table =
 
 prix : Table -> Prix
 prix table =
-    Essence.prix table.essence
+    GrilleTarifaire.essence table.essence
         |> Prix.times (Surface.m2 table.surface)
-        |> Prix.plus (Pietement.prix table.type_ table.pietement)
+        |> Prix.plus (GrilleTarifaire.pietement table.type_ table.pietement)
         |> Prix.round
 
 
 tableAManger =
-    { type_ = Type.AManger
+    { type_ = Type.TableAManger
     , essence = Chene
     , surface =
         { longueur = Centimetre 140

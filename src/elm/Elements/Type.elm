@@ -5,8 +5,8 @@ import Common.Mesures exposing (Ligne(..), TaillesRanges)
 
 
 type TableType
-    = Basse
-    | AManger
+    = TableBasse
+    | TableAManger
 
 toString: TableType -> String
 toString tableType =
@@ -14,7 +14,7 @@ toString tableType =
 
 fields : List (ImageOptionField.Model TableType)
 fields =
-    [ AManger, Basse ] |> List.map tableTypeField
+    [ TableAManger, TableBasse ] |> List.map tableTypeField
 
 
 tableTypeField : TableType -> ImageOptionField.Model TableType
@@ -22,10 +22,10 @@ tableTypeField tableType =
     let
         ( fieldId, labelString, image ) =
             case tableType of
-                Basse ->
+                TableBasse ->
                     ( "basse", "Table basse", "/public/images/simulation/table-basse.jpg" )
 
-                AManger ->
+                TableAManger ->
                     ( "a-manger", "Table à manger", "/public/images/simulation/table-a-manger.jpg" )
     in
     ImageOptionField.Model fieldId labelString image tableType
@@ -34,12 +34,12 @@ tableTypeField tableType =
 tailles : TableType -> TaillesRanges
 tailles tableType =
     case tableType of
-        Basse ->
+        TableBasse ->
             { largeurs = { min = Centimetre 50, max = Centimetre 300 }
             , longueurs = { min = Centimetre 50, max = Centimetre 300 }
             }
 
-        AManger ->
+        TableAManger ->
             { largeurs = { min = Centimetre 65, max = Centimetre 600 }
             , longueurs = { min = Centimetre 65, max = Centimetre 600 }
             }

@@ -21,28 +21,6 @@ all =
     [ Chene, Chataignier, Frene, Noyer, Prestige, Exotique ]
 
 
-prix : Essence -> Prix
-prix essence =
-    case essence of
-        Chene ->
-            Euros 900
-
-        Chataignier ->
-            Euros 900
-
-        Frene ->
-            Euros 850
-
-        Noyer ->
-            Euros 950
-
-        Prestige ->
-            Euros 1000
-
-        Exotique ->
-            Euros 900
-
-
 fields : List (ImageOptionField.Model Essence)
 fields =
     all

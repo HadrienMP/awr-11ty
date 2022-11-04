@@ -3,7 +3,7 @@ module Form exposing (..)
 import Common.Mesures as Mesures exposing (Ligne(..))
 import Common.Surface exposing (Surface)
 import Elements.Essence exposing (Essence)
-import Elements.Pietement exposing (Position)
+import Elements.Pietement exposing (Pietement)
 import Elements.Table as Table exposing (Table)
 import Elements.Type as Type exposing (TableType)
 
@@ -12,7 +12,7 @@ type alias Form =
     { type_ : Maybe TableType
     , essence : Maybe Essence
     , surface : Surface
-    , pietement : Maybe Position
+    , pietement : Maybe Pietement
     }
 
 
@@ -56,7 +56,7 @@ withLargeur table largeur =
 withType : TableType -> Form -> Form
 withType type_ table =
     case type_ of
-        Type.Basse ->
+        Type.TableBasse ->
             { type_ = Just type_
             , essence = table.essence
             , surface =
@@ -66,7 +66,7 @@ withType type_ table =
             , pietement = table.pietement
             }
 
-        Type.AManger ->
+        Type.TableAManger ->
             { type_ = Just type_
             , essence = table.essence
             , surface =
