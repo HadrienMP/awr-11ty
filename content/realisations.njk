@@ -1,0 +1,8 @@
+---
+title: Réalisations
+layout: layout/mosaic.njk
+tags: page
+---
+{% for realisation in realisations %}
+{% image realisation.image, realisation.titre, realisation.description %}
+{% endfor %}

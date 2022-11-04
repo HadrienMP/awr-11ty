@@ -1,10 +1,43 @@
+const Image = require('@11ty/eleventy-img');
+
+const imageShortcode = async (
+  src,
+  alt = null,
+  description = "",
+  widths = [400, 800, 1280],
+  formats = ['webp', 'jpeg'],
+  sizes = '100vw'
+) => {
+  const imageMetadata = await Image(src, {
+    widths: [...widths, null],
+    formats: [...formats, null],
+    outputDir: '_site/public/images',
+    urlPath: '/public/images',
+  });
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+  return `<div class="lightbox">
+    <div class="miniature">${Image.generateHTML(imageMetadata, imageAttributes)}</div>
+    <div class="content">
+      ${Image.generateHTML(imageMetadata, imageAttributes)}
+      <div class="description">
+        <h4>${alt}</h4>
+        <p>${description}</p>
+      </div>
+    </div>
+  </div>`;
+};
+
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "_build": "public" });
   eleventyConfig.addPassthroughCopy({ "public": "public" });
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
-    delimiters: ['//---', '---//']
   });
+  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addCollection("navigation", function (collectionApi) {
     return collectionApi.getFilteredByTag("page").sort((a, b) => {
       if (a.url === '/') return -1
@@ -15,6 +48,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "content",
+      // output: "dist",
     }
   }
 };

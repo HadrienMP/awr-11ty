@@ -1,0 +1,7 @@
+<section class="social">
+    {%- for link in socialLinks -%}
+        <a href={{link.url}} target='_blank' title={{link.title}}>
+            <i class="{{link.fontAwesomeIconClass}}"></i>
+        </a>
+    {%- endfor -%}
+</section>

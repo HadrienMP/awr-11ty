@@ -1,4 +1,4 @@
-document.querySelectorAll("img.lightbox").forEach((value) => {
-    const instance = basicLightbox.create(value.outerHTML);
-    value.onclick = () => instance.show();
+document.querySelectorAll(".lightbox .miniature").forEach((miniature) => {
+    const content = basicLightbox.create(miniature.nextElementSibling);
+    miniature.onclick = () => content.show();
 });

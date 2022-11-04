@@ -1,0 +1,13 @@
+---
+title: Tarifs
+layout: layout/regular.njk
+tags: page
+callToAction: true
+---
+<main class="centering-div">
+    <div id="simulation" />
+</main>
+<script src="/public/js/simulation.js"></script>
+<script>
+    Elm.Main.init({node: document.getElementById("simulation")});
+</script>

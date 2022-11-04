@@ -1,0 +1,14 @@
+---
+title: L'atelier
+layout: layout/mosaic.njk
+tags: page
+---
+{% for piece in atelier %}
+{% if piece.type == "video" %}
+<video controls poster={{piece.miniature}}>
+    <source src={{piece.video}} />
+</video>
+{% elif piece.type == "image" %}
+{% image piece.image, piece.titre, piece.description %}
+{% endif %}
+{% endfor %}

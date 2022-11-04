@@ -1,14 +1,55 @@
 $space: 4px;
+
 #mosaic {
   display: flex;
   flex-wrap: wrap;
   padding: $space;
   justify-content: center;
-  img, video {
+
+  video {
     border-radius: 10px;
     width: 400px;
     max-width: 50%;
     padding: $space;
     object-fit: cover;
+  }
+
+  .lightbox {
+    width: 400px;
+    max-width: 50%;
+    padding: $space;
+    object-fit: cover;
+    .content {
+      display: none;
+    }
+    .miniature {
+      height: 100%;
+      width: 100%;
+    }
+    picture img {
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+    }
+  }
+}
+
+.basicLightbox__placeholder {
+  border-radius: 10px;
+  overflow: hidden;
+  .description {
+    color: white;
+    background-color: rgba($color: #111, $alpha: .7);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 24px;
+    
+    h4 {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
   }
 }

@@ -3,3 +3,4 @@ _build
 _site
 node_modules
 elm-stuff
+.parcel-cache
