@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "elm-tooling install",
-    "build": "yarn build:sass && yarn build:elm && yarn eleventy build",
+    "build": "yarn build:sass && yarn build:elm && yarn eleventy",
     "build:sass": "sass ./src/sass/main.scss ./_build/css/main.css",
     "build:elm": "elm make src/elm/Main.elm --output _build/js/simulation.js --optimize",
     "dev": "concurrently \"yarn dev:sass\"  \"yarn dev:11ty\" \"yarn dev:elm\"",
