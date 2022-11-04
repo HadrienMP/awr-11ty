@@ -1,0 +1,24 @@
+{
+  "name": "awr-11ty",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "elm-tooling install",
+    "build": "yarn build:sass && yarn build:elm && yarn eleventy build",
+    "build:sass": "sass ./src/sass/main.scss ./_build/css/main.css",
+    "build:elm": "elm make src/elm/Main.elm --output _build/js/simulation.js --optimize",
+    "dev": "concurrently \"yarn dev:sass\"  \"yarn dev:11ty\" \"yarn dev:elm\"",
+    "dev:11ty": "eleventy --serve",
+    "dev:elm": "chokidar 'src/elm/**/*.elm' -c 'elm make src/elm/Main.elm --output _build/js/simulation.js --debug' --initial",
+    "dev:sass": "sass --watch ./src/sass/main.scss ./_build/css/main.css"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^7.5.0",
+    "elm-tooling": "^1.10.0",
+    "sass": "^1.55.0"
+  }
+}

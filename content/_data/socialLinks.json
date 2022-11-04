@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Suivez moi sur Insta !",
+        "url": "https://www.instagram.com/woodriver33/",
+        "fontAwesomeIconClass": "fab fa-instagram"
+    },
+    {
+        "title": "Suivez moi sur Facebook !",
+        "url": "https://www.facebook.com/Latelier-wood-river-103327594626145/",
+        "fontAwesomeIconClass": "fab fa-facebook-f"
+    },
+    {
+        "title": "Écrivez-moi un mail !",
+        "url": "mailto:tom@atelierwoodriver.fr",
+        "fontAwesomeIconClass": "far fa-envelope"
+    },
+    {
+        "title": "Téléphonez-moi !",
+        "url": "tel:0650806685",
+        "fontAwesomeIconClass": "fas fa-phone-alt"
+    }
+]
