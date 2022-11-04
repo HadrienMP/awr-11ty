@@ -1,0 +1,16 @@
+{% extends "layout/regular.njk" %}
+
+{% block content %}
+    <main class="centering-div">
+        <div id="simulation"/>
+    </main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="/public/js/simulation.js"></script>
+    <script>
+        Elm.Main.init({
+            node: document.getElementById("simulation"), 
+        });
+    </script>
+{% endblock %}
