@@ -13,8 +13,7 @@ main#container(class=page.url === '/' ? 'index-container': '')
 
 nav 
     mixin pagesMixin
-        - collections.page.sort()
-        each navItem in collections.page
+        each navItem in collections.navigation
             - const activeClass=navItem.url == page.url ? 'active': ''
             - const ctaClass = navItem.data.callToAction ? 'call-to-action' : ''
             - const pageClass = `${ctaClass} ${activeClass}`
