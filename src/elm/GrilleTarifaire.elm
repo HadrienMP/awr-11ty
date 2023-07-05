@@ -10,22 +10,22 @@ essence : Essence -> Prix
 essence value =
     case value of
         Chene ->
-            Euros 900
-
-        Chataignier ->
-            Euros 900
-
-        Frene ->
-            Euros 850
-
-        Noyer ->
-            Euros 950
-
-        Prestige ->
             Euros 1000
 
+        Chataignier ->
+            Euros 1000
+
+        Frene ->
+            Euros 950
+
+        Noyer ->
+            Euros 1050
+
+        Prestige ->
+            Euros 1100
+ 
         Exotique ->
-            Euros 900
+            Euros 1050
 
 
 
@@ -35,15 +35,15 @@ pietement typeDeTable typePietement =
         TableBasse ->
             case typePietement of
                 BoutDeTable ->
-                    Euros 180
+                    Euros 240
 
                 Central ->
-                    Euros 250
+                    Euros 310
 
         TableAManger ->
             case typePietement of
                 BoutDeTable ->
-                    Euros 250
+                    Euros 310
 
                 Central ->
-                    Euros 500
+                    Euros 560
