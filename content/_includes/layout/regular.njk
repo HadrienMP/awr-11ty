@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">       
   </head>
+  <body id={{id}}>
   <main class="{{ "index-container" if page.url == "/"}}" id="container">
     {% block content %}
     {{ content | safe }}
@@ -19,6 +20,7 @@
   <nav>
     <div id="main-nav">
       <a class=" active" href="/" id="home">AWR</a>
+      <a class=" " href="/a-propos/" id="">À propos</a>
       <a class=" " href="/atelier/" id="">L'atelier</a>
       <a class=" " href="/realisations/" id="">Réalisations</a>
       <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
@@ -31,6 +33,7 @@
         <i class="fa fa-times"></i>
       </a>
       <a class=" active" href="/" id="home">AWR</a>
+      <a class=" " href="/a-propos/" id="">À propos</a>
       <a class=" " href="/atelier/" id="">L'atelier</a>
       <a class=" " href="/realisations/" id="">Réalisations</a>
       <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
@@ -45,4 +48,5 @@
   <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
   {% block scripts %}
   {% endblock %}
+</body>
 </html>

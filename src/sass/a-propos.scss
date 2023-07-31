@@ -1,0 +1,16 @@
+#a-propos {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+
+  @media screen and (max-width: 500px) {
+    #illustration {
+      display: none;
+    }
+  }
+
+  #gallery {
+    margin: 0;
+  }
+}

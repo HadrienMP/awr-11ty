@@ -5,24 +5,31 @@
 @import "simulation";
 
 html {
-  --color-text: black;
-  --color-background: white;
-
-  --color-primary: #cba04a;
-  --color-on-primary: white;
-
-  --color-secondary: wheat;
-  --color-on-secondary: black;
-
-  --color-accent: #cba04a;
-  --color-on-accent: white;
+  --color-text: white;
+  --color-background: black;
+  --color-primary: white;
+  --color-on-primary: black;
+  --color-secondary: black;
+  --color-on-secondary: white;
+  --color-accent: white;
+  --color-on-accent: black;
 
   background: var(--color-secondary);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+img {
+  border-radius: 10px;
 }
 
 body {
   @include font();
   background: var(--color-background);
+  color: var(--color-text);
 }
 
 a {
@@ -45,6 +52,7 @@ a {
   background: var(--color-background);
   overflow: auto;
   width: 100%;
+  margin-top: 40px;
 
   @media (max-width: $max-container-width) {
     padding: 0 2vh;
@@ -91,7 +99,7 @@ header {
 
   img {
     border-radius: 50%;
-    box-shadow: 4px 4px 10px $light-color;
+    // box-shadow: 4px 4px 10px var(--color-primary);
   }
 
   h1 {
@@ -137,7 +145,7 @@ h2 {
 
 #apropos {
   text-align: justify;
-  padding: 5vh 20px;
+  padding: 5vh 0;
   border-top: 2px solid var(--color-secondary);
   border-bottom: 2px solid var(--color-secondary);
 }
@@ -177,5 +185,26 @@ footer {
       padding-top: 6px;
       margin: 0 4px;
     }
+  }
+}
+
+@import "a-propos";
+#accueil {
+  #container {
+    margin: 0;
+    padding: 0;
+  }
+  .carousel {
+    overflow: hidden;
+    display: flex;
+    picture,
+    img {
+      width: 100%;
+      border-radius: 0;
+      height: auto;
+    }
+  }
+  footer {
+    display: none;
   }
 }

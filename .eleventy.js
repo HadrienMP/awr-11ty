@@ -35,12 +35,36 @@ const imageShortcode = async (
   </div>`;
 };
 
+const imageShortcode2 = async (
+  src,
+  alt = null,
+  description = "",
+  widths = [200, 400, 800, 1280],
+  formats = ["webp", "jpeg"],
+  sizes = "100vw"
+) => {
+  const imageMetadata = await Image(src, {
+    widths: [...widths, null],
+    formats: [...formats, null],
+    outputDir: "_site/images",
+    urlPath: "/images",
+  });
+  const imageAttributes = {
+    alt,
+    sizes,
+    loading: "lazy",
+    decoding: "async",
+  };
+  return Image.generateHTML(imageMetadata, imageAttributes);
+};
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ public: "/" });
   eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
   });
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode("image2", imageShortcode2);
   eleventyConfig.addCollection("navigation", function (collectionApi) {
     return collectionApi.getFilteredByTag("page").sort((a, b) => {
       if (a.url === "/") return -1;
