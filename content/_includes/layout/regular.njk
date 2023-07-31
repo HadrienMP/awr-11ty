@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AWR | L&apos;Atelier Wood River</title>
-        <link href="/public/css/main.css" rel="stylesheet">
-        <link rel="stylesheet" href="/public/css/basicLightbox.min.css">
-    </head>
-    <main class="{{ "index-container" if page.url == "/"}}" id="container">
-        {% block content %}
-        {{ content | safe }}
-        {% endblock %}
-    </main>
-    <nav>
-        <div id="main-nav">
-            <a class=" active" href="/" id="home">AWR</a>
-            <a class=" " href="/atelier/" id="">L'atelier</a>
-            <a class=" " href="/realisations/" id="">Réalisations</a>
-            <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
-            <a id="show-nav" href="#">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        <div id="mobile-nav">
-            <a id="close-nav" href="#">
-                <i class="fa fa-times"></i>
-            </a>
-            <a class=" active" href="/" id="home">AWR</a>
-            <a class=" " href="/atelier/" id="">L'atelier</a>
-            <a class=" " href="/realisations/" id="">Réalisations</a>
-            <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
-        </div>
-    </nav>
-    <footer>
-        {% include "./common/social.njk" %}
-    </footer>
-    <script src="/public/js/nav.js"></script>
-    <script src="/public/js/basicLightbox.min.js"></script>
-    <script src="/public/js/ligthbox.js" type="module"></script>
-    <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
-    {% block scripts %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWR | L&apos;Atelier Wood River</title>
+    <link href="/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/basicLightbox.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">       
+  </head>
+  <main class="{{ "index-container" if page.url == "/"}}" id="container">
+    {% block content %}
+    {{ content | safe }}
     {% endblock %}
+  </main>
+  <nav>
+    <div id="main-nav">
+      <a class=" active" href="/" id="home">AWR</a>
+      <a class=" " href="/atelier/" id="">L'atelier</a>
+      <a class=" " href="/realisations/" id="">Réalisations</a>
+      <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
+      <a id="show-nav" href="#">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div id="mobile-nav">
+      <a id="close-nav" href="#">
+        <i class="fa fa-times"></i>
+      </a>
+      <a class=" active" href="/" id="home">AWR</a>
+      <a class=" " href="/atelier/" id="">L'atelier</a>
+      <a class=" " href="/realisations/" id="">Réalisations</a>
+      <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
+    </div>
+  </nav>
+  <footer>
+    {% include "./common/social.njk" %}
+  </footer>
+  <script src="/js/nav.js"></script>
+  <script src="/js/basicLightbox.min.js"></script>
+  <script src="/js/ligthbox.js" type="module"></script>
+  <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
+  {% block scripts %}
+  {% endblock %}
 </html>

@@ -12,9 +12,11 @@ type Essence
     | Prestige
     | Exotique
 
-toString: Essence -> String
+
+toString : Essence -> String
 toString essence =
     essenceField essence |> .labelString
+
 
 all : List Essence
 all =
@@ -24,7 +26,8 @@ all =
 fields : List (ImageOptionField.Model Essence)
 fields =
     all
-    |> List.map essenceField
+        |> List.map essenceField
+
 
 essenceField : Essence -> ImageOptionField.Model Essence
 essenceField essence =
@@ -32,21 +35,21 @@ essenceField essence =
         ( fieldId, labelString, image ) =
             case essence of
                 Chene ->
-                    ( "chene", "Chêne", "/public/images/simulation/essences-img/chene.jpg" )
+                    ( "chene", "Chêne", "/images/simulation/essences-img/chene.jpg" )
 
                 Chataignier ->
-                    ( "chataignier", "Châtaignier", "/public/images/simulation/essences-img/chataigner.jpg" )
+                    ( "chataignier", "Châtaignier", "/images/simulation/essences-img/chataigner.jpg" )
 
                 Frene ->
-                    ( "frene", "Frêne", "/public/images/simulation/essences-img/frene.jpg" )
+                    ( "frene", "Frêne", "/images/simulation/essences-img/frene.jpg" )
 
                 Noyer ->
-                    ( "noyer", "Noyer", "/public/images/simulation/essences-img/noyer.jpg" )
+                    ( "noyer", "Noyer", "/images/simulation/essences-img/noyer.jpg" )
 
                 Prestige ->
-                    ( "prestige", "Prestige", "/public/images/simulation/essences-img/olivier.jpg" )
+                    ( "prestige", "Prestige", "/images/simulation/essences-img/olivier.jpg" )
 
                 Exotique ->
-                    ( "exotique", "Exotique", "/public/images/simulation/essences-img/bubinga.jpg" )
+                    ( "exotique", "Exotique", "/images/simulation/essences-img/bubinga.jpg" )
     in
     ImageOptionField.Model fieldId labelString image essence

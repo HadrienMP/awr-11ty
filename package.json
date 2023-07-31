@@ -6,13 +6,13 @@
   "scripts": {
     "postinstall": "elm-tooling install",
     "build": "run-s build:*",
-    "build:sass": "sass ./src/sass/main.scss ./_site/public/css/main.css",
-    "build:elm": "elm make src/elm/Main.elm --output ./_site/public/js/simulation.js --optimize",
+    "build:sass": "sass ./src/sass/main.scss ./_site/css/main.css",
+    "build:elm": "elm make src/elm/Main.elm --output ./_site/js/simulation.js --optimize",
     "build:11ty": "eleventy",
     "dev": "npm-run-all --parallel dev:*",
     "dev:11ty": "eleventy --serve",
-    "dev:elm": "chokidar 'src/elm/**/*.elm' -c 'elm make src/elm/Main.elm --output ./_site/public/js/simulation.js --debug' --initial",
-    "dev:sass": "sass --watch ./src/sass/main.scss ./_site/public/css/main.css"
+    "dev:elm": "chokidar 'src/elm/**/*.elm' -c 'elm make src/elm/Main.elm --output ./_site/js/simulation.js --debug' --initial",
+    "dev:sass": "sass --watch ./src/sass/main.scss ./_site/css/main.css"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",

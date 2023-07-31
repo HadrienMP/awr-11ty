@@ -8,9 +8,11 @@ type TableType
     = TableBasse
     | TableAManger
 
-toString: TableType -> String
+
+toString : TableType -> String
 toString tableType =
     tableTypeField tableType |> .labelString
+
 
 fields : List (ImageOptionField.Model TableType)
 fields =
@@ -23,10 +25,10 @@ tableTypeField tableType =
         ( fieldId, labelString, image ) =
             case tableType of
                 TableBasse ->
-                    ( "basse", "Table basse", "/public/images/simulation/table-basse.jpg" )
+                    ( "basse", "Table basse", "/images/simulation/table-basse.jpg" )
 
                 TableAManger ->
-                    ( "a-manger", "Table à manger", "/public/images/simulation/table-a-manger.jpg" )
+                    ( "a-manger", "Table à manger", "/images/simulation/table-a-manger.jpg" )
     in
     ImageOptionField.Model fieldId labelString image tableType
 

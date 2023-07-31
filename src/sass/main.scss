@@ -1,24 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap");
 @import "reset";
 @import "theme";
 @import "galerie";
 @import "simulation";
 
 html {
-  background: $light-color;
+  --color-text: black;
+  --color-background: white;
+
+  --color-primary: #cba04a;
+  --color-on-primary: white;
+
+  --color-secondary: wheat;
+  --color-on-secondary: black;
+
+  --color-accent: #cba04a;
+  --color-on-accent: white;
+
+  background: var(--color-secondary);
 }
 
 body {
   @include font();
+  background: var(--color-background);
 }
 
-
 a {
-  color: black;
+  color: var(--color-text);
   text-decoration: none;
 
   &:visited {
-    color: black;
+    color: var(--color-text);
   }
 }
 
@@ -30,7 +42,7 @@ a {
   position: absolute;
   top: 50px;
   bottom: 50px;
-  background: white;
+  background: var(--color-background);
   overflow: auto;
   width: 100%;
 
@@ -110,10 +122,10 @@ header {
 .social {
   display: flex;
   a {
-    background: $intense-color;
+    background: var(--color-primary);
     border-radius: 50%;
     text-align: center;
-    color: white;
+    color: var(--color-on-primary);
   }
 }
 
@@ -126,8 +138,8 @@ h2 {
 #apropos {
   text-align: justify;
   padding: 5vh 20px;
-  border-top: 2px solid $light-color;
-  border-bottom: 2px solid $light-color;
+  border-top: 2px solid var(--color-secondary);
+  border-bottom: 2px solid var(--color-secondary);
 }
 
 #gallery {
@@ -154,7 +166,7 @@ footer {
   right: 0;
   text-align: right;
   padding: 10px;
-  background: $light-color;
+  background: var(--color-secondary);
 
   .social {
     justify-content: right;

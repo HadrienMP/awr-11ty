@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: $light-color;
+  background-color: var(--color-secondary);
 
   @media (max-width: 614px) {
     a {
@@ -34,7 +34,7 @@ nav {
   a {
     padding: 10px;
     margin: 0 10px;
-    border-left: 1px white;
+    border-left: 1px var(--color-background);
     vertical-align: middle;
     flex-shrink: 0;
     border-radius: 5px;
@@ -47,7 +47,7 @@ nav {
     }
 
     &:hover {
-      text-shadow: 1px 0 0 black;
+      text-shadow: 1px 0 0 var(--color-text);
     }
 
     &.active {
@@ -55,11 +55,11 @@ nav {
     }
 
     &.call-to-action {
-      background-color: $intense-color;
-      color: white;
+      background-color: var(--color-accent);
+      color: var(--color-on-accent);
 
       &:hover {
-        text-shadow: 1px 0 0 white;
+        text-shadow: 1px 0 0 var(--color-on-accent);
       }
     }
   }
@@ -71,7 +71,7 @@ nav {
   bottom: 0;
   left: 0;
   right: 0;
-  background: wheat;
+  background: var(--color-secondary);
   z-index: 10;
   display: none;
   padding: 40px;

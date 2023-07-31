@@ -1,6 +1,12 @@
+$max-container-width: 800px;
+
+$color-background: white;
+$color-text: black;
+$color-primary: #cba04a;
+$color-secondary: wheat;
+$color-accent: wheat;
 $light-color: wheat;
 $intense-color: #cba04a;
-$max-container-width: 800px;
 
 @mixin font {
   font-family: Raleway, sans-serif;
