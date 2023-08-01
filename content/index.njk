@@ -4,20 +4,22 @@ layout: layout/regular.njk
 tags: page
 id: accueil
 ---
-<div class="carousel">
-{% for realisation in realisations %}
-{% image2 realisation.image, realisation.titre, realisation.description %}
-{% endfor %}
+<div class="splide">
+  <div class="splide__track">
+    <ul class="splide__list">
+    {% for realisation in realisations %}
+      <li class="splide__slide">
+      {{realisation.titre}}
+      {% image2 realisation.image, realisation.titre, realisation.description %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
 </div>
-<div class="centering-div">
-    <header>
-        {% image "./public/images/profile.png", "By Tom" %}
-        <div id="description">
-            <h1>L&apos;Atelier Wood&nbsp;River</h1>
-            <h2>Tables rivi&egrave;re sur mesure</h2>
-            <p>100% artisanal, 100% fran&ccedil;ais</p>
-
-            {% include "layout/common/social.njk" %}
-        </div>
-    </header>
+<div id="description">
+    <h1>L&apos;Atelier Wood&nbsp;River</h1>
+    <h2>Tables rivi&egrave;re sur mesure</h2>
+    <p>100% artisanal, 100% fran&ccedil;ais</p>
+    {% include "layout/common/social.njk" %}
+    <a href="/tarifs" class="cta">Créez votre table</a>
 </div>

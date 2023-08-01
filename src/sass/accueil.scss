@@ -1,0 +1,90 @@
+@import "common";
+
+$layout-width-limit: 900px;
+
+#accueil {
+  main {
+    margin: var(--space-s);
+    display: flex;
+    align-items: center;
+    overflow: auto;
+
+    @media screen and (max-width: $layout-width-limit) {
+      flex-direction: column;
+      --size-xxl: 26pt;
+      --size-l: 16pt;
+      --size-m: 14pt;
+      --space-xl: 30px;
+      --space-l: 20px;
+      --space-m: 10px;
+    }
+    @media screen and (min-width: $layout-width-limit) and (max-width: 1300px) {
+      height: calc(100vh - 52px);
+      --size-xxl: 4.2vw;
+      --size-l: 2.6vw;
+    }
+
+    & > * {
+      width: 50%;
+      @media screen and (max-width: $layout-width-limit) {
+        height: 50%;
+        width: 100%;
+      }
+    }
+
+    #description {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (max-width: $layout-width-limit) {
+        margin-top: var(--space-xl);
+      }
+
+      h1 {
+        font-size: var(--size-xxl);
+        @include text-contour(0.4vmax, 0px);
+        margin-bottom: var(--space-l);
+      }
+      h2 {
+        font-size: calc(var(--size-l) * 1.15);
+        @include text-contour(0.1vmax, 0px);
+      }
+      p {
+        font-size: var(--size-l);
+        @include text-contour(0.1vmax, 0px);
+        margin-bottom: var(--space-m);
+      }
+    }
+
+    .cta {
+      font-size: var(--size-m);
+      padding: var(--space-m);
+      margin-top: var(--space-xl);
+    }
+    .splide {
+      height: 100%;
+      overflow: hidden;
+      @media screen and (max-width: $layout-width-limit) {
+        height: auto;
+      }
+      .splide__track {
+        height: 100%;
+      }
+      .splide__slide {
+        display: flex;
+        align-items: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  img {
+    border-radius: 0;
+  }
+  footer {
+    display: none;
+  }
+}

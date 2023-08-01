@@ -11,10 +11,51 @@ html {
   --color-on-primary: black;
   --color-secondary: black;
   --color-on-secondary: white;
-  --color-accent: white;
-  --color-on-accent: black;
+  --color-accent: #0060d1;
+  --color-accent-light: #107eff;
+  --color-on-accent: white;
 
+  // ----------------------
+  // Spacing
+  // ----------------------
+  --space-step: 1.8;
+  --space-xs: 6px;
+  --space-s: calc(var(--space-xs) * var(--space-step));
+  --space-m: calc(var(--space-s) * var(--space-step));
+  --space-l: calc(var(--space-m) * var(--space-step));
+  --space-xl: calc(var(--space-l) * var(--space-step));
+  --space-xxl: calc(var(--space-xl) * var(--space-step));
+
+  // ----------------------
+  // Size
+  // ----------------------
+  --size-step: 1.34;
+  --size-xs: 10pt;
+  --size-s: calc(var(--size-xs) * var(--size-step));
+  --size-m: calc(var(--size-s) * var(--size-step));
+  --size-l: calc(var(--size-m) * var(--size-step));
+  --size-xl: calc(var(--size-l) * var(--size-step));
+  --size-xxl: calc(var(--size-xl) * var(--size-step));
+
+  // ----------------------
+
+  height: 100%;
   background: var(--color-secondary);
+  font-size: var(--size-s);
+}
+
+a.cta {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  padding: var(--space-xs) var(--space-s);
+  border-radius: 5px;
+  transition-property: background text-shadow;
+  transition-duration: 0.4s;
+
+  &:hover {
+    background: var(--color-accent-light);
+    text-shadow: 1px 0 0 var(--color-on-accent);
+  }
 }
 
 h1 {
@@ -30,6 +71,13 @@ body {
   @include font();
   background: var(--color-background);
   color: var(--color-text);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
 }
 
 a {
@@ -43,20 +91,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-#container {
-  position: absolute;
-  top: 50px;
-  bottom: 50px;
-  background: var(--color-background);
-  overflow: auto;
-  width: 100%;
-  margin-top: 40px;
-
-  @media (max-width: $max-container-width) {
-    padding: 0 2vh;
-  }
 }
 
 .centering-div {
@@ -114,7 +148,7 @@ header {
     justify-content: center;
     margin-top: 26px;
     a {
-      font-size: 1.2em;
+      font-size: var(--size-s);
       height: 40px;
       width: 40px;
       padding-top: 10px;
@@ -129,11 +163,22 @@ header {
 }
 .social {
   display: flex;
+  gap: var(--space-m);
   a {
     background: var(--color-primary);
     border-radius: 50%;
-    text-align: center;
     color: var(--color-on-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--size-m);
+    width: calc(var(--size-m) + 2 * var(--space-s));
+    height: calc(var(--size-m) + 2 * var(--space-s));
+    transition: scale 0.2s;
+
+    &:hover {
+      scale: 1.1;
+    }
   }
 }
 
@@ -168,43 +213,31 @@ h2 {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
   text-align: right;
-  padding: 10px;
+  padding: var(--space-s);
+  margin-top: var(--space-xxl);
   background: var(--color-secondary);
 
   .social {
     justify-content: right;
+    gap: var(--space-xs);
 
     a {
+      font-size: var(--size-xs);
       width: 30px;
       height: 30px;
-      padding-top: 6px;
-      margin: 0 4px;
+      margin: 0;
     }
   }
+}
+
+@mixin text-contour($width, $blur) {
+  $inv-size: $width * -1;
+  text-shadow: $width $width $blur black, $width 0 $blur black,
+    0 $width $blur black, $inv-size $inv-size $blur black,
+    $inv-size 0 $blur black, 0 $inv-size $blur black,
+    $width $inv-size $blur black, $inv-size $width $blur black;
 }
 
 @import "a-propos";
-#accueil {
-  #container {
-    margin: 0;
-    padding: 0;
-  }
-  .carousel {
-    overflow: hidden;
-    display: flex;
-    picture,
-    img {
-      width: 100%;
-      border-radius: 0;
-      height: auto;
-    }
-  }
-  footer {
-    display: none;
-  }
-}
+@import "accueil";

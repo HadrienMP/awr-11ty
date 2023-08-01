@@ -3,12 +3,7 @@
 #main-nav {
   display: flex;
   align-items: center;
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
 
   @media (max-width: 614px) {
     a {
@@ -29,38 +24,31 @@
 }
 
 nav {
-  position: sticky;
   top: 0;
+  padding: var(--space-s);
   a {
-    padding: 10px;
-    margin: 0 10px;
+    margin: 0;
+    margin-left: var(--space-m);
     border-left: 1px var(--color-background);
     vertical-align: middle;
     flex-shrink: 0;
     border-radius: 5px;
+    transition: text-shadow 0.4s;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &#home {
-      font-size: 1.35em;
+      font-size: var(--size-m);
       flex-grow: 1;
-      padding: 15px 10px;
       display: block;
-    }
-
-    &:hover {
-      text-shadow: 1px 0 0 var(--color-text);
-    }
-
-    &.active {
       text-decoration: underline;
     }
 
-    &.call-to-action {
-      background-color: var(--color-accent);
-      color: var(--color-on-accent);
-
-      &:hover {
-        text-shadow: 1px 0 0 var(--color-on-accent);
-      }
+    &:hover,
+    &.active {
+      text-shadow: 1px 0 0 var(--color-text);
     }
   }
 }

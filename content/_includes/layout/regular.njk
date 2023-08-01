@@ -6,47 +6,54 @@
     <title>AWR | L&apos;Atelier Wood River</title>
     <link href="/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/basicLightbox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" 
+      integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">       
   </head>
   <body id={{id}}>
-  <main class="{{ "index-container" if page.url == "/"}}" id="container">
-    {% block content %}
-    {{ content | safe }}
+    <nav>
+      <div id="main-nav">
+        <a class="{{ 'active' if page.url == '/' }}" href="/" id="home">AWR</a>
+        <a class=" {{ 'active' if '/a-propos' in page.url }}" href="/a-propos/" id="">À propos</a>
+        <a class=" {{ 'active' if '/atelier' in page.url }}" href="/atelier/" id="">L'atelier</a>
+        <a class=" {{ 'active' if '/realisations' in page.url }}" href="/realisations/" id="">Réalisations</a>
+        <a class="cta {{ 'active' if '/tarifs' in page.url }}" href="/tarifs/" id="">Tarifs</a>
+        <a id="show-nav" href="#">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div id="mobile-nav">
+        <a id="close-nav" href="#">
+          <i class="fa fa-times"></i>
+        </a>
+        <a class=" active" href="/" id="home">AWR</a>
+        <a class=" " href="/a-propos/" id="">À propos</a>
+        <a class=" " href="/atelier/" id="">L'atelier</a>
+        <a class=" " href="/realisations/" id="">Réalisations</a>
+        <a class="cta " href="/tarifs/" id="">Tarifs</a>
+      </div>
+    </nav>
+    <main class="{{ "index-container" if page.url == "/"}}" id="container">
+      {% block content %}
+      {{ content | safe }}
+      {% endblock %}
+    </main>
+    <footer>
+      {% include "./common/social.njk" %}
+    </footer>
+    <script src="/js/nav.js"></script>
+    <script src="/js/basicLightbox.min.js"></script>
+    <script src="/js/ligthbox.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      const splide = new Splide( '.splide', {type: 'loop', autoplay: 'pause', cover: true})
+      splide.mount();
+    </script>
+    <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
+    {% block scripts %}
     {% endblock %}
-  </main>
-  <nav>
-    <div id="main-nav">
-      <a class=" active" href="/" id="home">AWR</a>
-      <a class=" " href="/a-propos/" id="">À propos</a>
-      <a class=" " href="/atelier/" id="">L'atelier</a>
-      <a class=" " href="/realisations/" id="">Réalisations</a>
-      <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
-      <a id="show-nav" href="#">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    <div id="mobile-nav">
-      <a id="close-nav" href="#">
-        <i class="fa fa-times"></i>
-      </a>
-      <a class=" active" href="/" id="home">AWR</a>
-      <a class=" " href="/a-propos/" id="">À propos</a>
-      <a class=" " href="/atelier/" id="">L'atelier</a>
-      <a class=" " href="/realisations/" id="">Réalisations</a>
-      <a class="call-to-action " href="/tarifs/" id="">Tarifs</a>
-    </div>
-  </nav>
-  <footer>
-    {% include "./common/social.njk" %}
-  </footer>
-  <script src="/js/nav.js"></script>
-  <script src="/js/basicLightbox.min.js"></script>
-  <script src="/js/ligthbox.js" type="module"></script>
-  <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
-  {% block scripts %}
-  {% endblock %}
-</body>
+  </body>
 </html>

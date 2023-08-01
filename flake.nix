@@ -13,6 +13,7 @@
       {
         devShell = pkgs.mkShell {
           packages = with pkgs; [
+            just
             yarn
             nodePackages.gitmoji-cli
           ];
