@@ -29,8 +29,16 @@
     <script src="/js/ligthbox.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script>
-      const splide = new Splide( '.splide', {type: 'loop', autoplay: 'pause', cover: true})
-      splide.mount();
+      document.addEventListener( 'DOMContentLoaded', function () {
+        const splide = new Splide( '.splide', {
+          type: 'loop', 
+          autoplay: true,  
+          cover: true, 
+          speed: 800,
+          interval: 2000
+        })
+        splide.mount();
+      });
     </script>
     <script src="https://kit.fontawesome.com/36321d34e2.js" crossorigin="anonymous"></script>
     {% block scripts %}
