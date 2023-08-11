@@ -1,0 +1,22 @@
+<nav>
+  <div id="main-nav">
+    <a class="{{ 'active' if page.url == '/' }}" href="/" id="home">AWR</a>
+    <a class=" {{ 'active' if '/a-propos' in page.url }}" href="/a-propos/" id="">À propos</a>
+    <a class=" {{ 'active' if '/atelier' in page.url }}" href="/atelier/" id="">L'atelier</a>
+    <a class=" {{ 'active' if '/realisations' in page.url }}" href="/realisations/" id="">Réalisations</a>
+    <a class="cta {{ 'active' if '/tarifs' in page.url }}" href="/tarifs/" id="">Tarifs</a>
+    <a id="show-nav" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div id="mobile-nav">
+    <a id="close-nav" href="#">
+      <i class="fa fa-times"></i>
+    </a>
+    <a class=" active" href="/" id="home">AWR</a>
+    <a class=" " href="/a-propos/" id="">À propos</a>
+    <a class=" " href="/atelier/" id="">L'atelier</a>
+    <a class=" " href="/realisations/" id="">Réalisations</a>
+    <a class="cta " href="/tarifs/" id="">Tarifs</a>
+  </div>
+</nav>

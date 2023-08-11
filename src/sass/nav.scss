@@ -5,7 +5,7 @@
   align-items: center;
   background: var(--color-secondary);
 
-  @media (max-width: 614px) {
+  @media (max-width: $nav-layout-switch) {
     a {
       display: none;
     }
@@ -13,7 +13,7 @@
       display: block;
     }
   }
-  @media (min-width: 614px) {
+  @media (min-width: $nav-layout-switch) {
     a {
       display: block;
     }

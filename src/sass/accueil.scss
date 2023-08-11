@@ -7,6 +7,11 @@ $layout-width-limit: 900px;
     display: flex;
     align-items: center;
     overflow: auto;
+    max-width: 100%;
+
+    & > h1:first-child {
+      display: none;
+    }
 
     @media screen and (max-width: $layout-width-limit) {
       flex-direction: column;

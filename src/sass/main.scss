@@ -81,6 +81,21 @@ body {
 main {
   flex-grow: 1;
   padding: var(--space-s);
+  padding-top: var(--space-l);
+  margin: auto;
+  max-width: 800px;
+
+  & > h1:first-child {
+    margin-bottom: var(--space-l);
+    @media screen and (max-width: $nav-layout-switch) {
+      font-size: var(--size-s);
+      font-weight: normal;
+      position: absolute;
+      top: calc(var(--space-s) + var(--space-xs));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 }
 
 a {
@@ -94,11 +109,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.centering-div {
-  margin: auto;
-  max-width: 800px;
 }
 
 header {
@@ -244,3 +254,10 @@ footer {
 
 @import "a-propos";
 @import "accueil";
+#tarifs {
+  main {
+    & > h1:first-child {
+      display: none;
+    }
+  }
+}

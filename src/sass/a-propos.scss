@@ -1,16 +1,12 @@
+@import "theme";
+
 #a-propos {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  margin-top: 40px;
-
-  @media screen and (max-width: 500px) {
-    #illustration {
-      display: none;
+  #content {
+    display: flex;
+    gap: var(--space-m);
+    align-items: center;
+    @media screen and (max-width: $nav-layout-switch) {
+      flex-direction: column;
     }
-  }
-
-  #gallery {
-    margin: 0;
   }
 }

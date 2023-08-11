@@ -14,7 +14,6 @@ $space: 4px;
   }
 
   .lightbox {
-    width: 400px;
     max-width: calc(50% - var(--space-s) / 2);
     object-fit: cover;
     .content {
