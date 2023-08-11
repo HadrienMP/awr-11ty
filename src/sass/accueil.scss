@@ -4,19 +4,18 @@ $layout-width-limit: 900px;
 
 #accueil {
   main {
-    margin: var(--space-s);
     display: flex;
     align-items: center;
     overflow: auto;
 
     @media screen and (max-width: $layout-width-limit) {
       flex-direction: column;
-      --size-xxl: 26pt;
+      --size-xxl: 24pt;
       --size-l: 16pt;
       --size-m: 14pt;
       --space-xl: 30px;
-      --space-l: 20px;
-      --space-m: 10px;
+      --space-l: 25px;
+      --space-m: 20px;
     }
     @media screen and (min-width: $layout-width-limit) and (max-width: 1300px) {
       height: calc(100vh - 52px);
@@ -66,6 +65,7 @@ $layout-width-limit: 900px;
       overflow: hidden;
       @media screen and (max-width: $layout-width-limit) {
         height: auto;
+        max-height: 50%;
       }
       .splide__track {
         height: 100%;

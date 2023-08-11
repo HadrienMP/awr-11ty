@@ -3,21 +3,19 @@ $space: 4px;
 #mosaic {
   display: flex;
   flex-wrap: wrap;
-  padding: $space;
   justify-content: center;
+  gap: var(--space-s);
 
   video {
     border-radius: 10px;
     width: 400px;
-    max-width: 50%;
-    padding: $space;
+    max-width: calc(50% - var(--space-s) / 2);
     object-fit: cover;
   }
 
   .lightbox {
     width: 400px;
-    max-width: 50%;
-    padding: $space;
+    max-width: calc(50% - var(--space-s) / 2);
     object-fit: cover;
     .content {
       display: none;
@@ -31,7 +29,6 @@ $space: 4px;
       width: 100%;
       height: 100%;
       object-fit: cover;
-
     }
   }
 }
@@ -41,12 +38,12 @@ $space: 4px;
   overflow: hidden;
   .description {
     color: white;
-    background-color: rgba($color: #111, $alpha: .7);
+    background-color: rgba($color: #111, $alpha: 0.7);
     position: absolute;
     bottom: 0;
     width: 100%;
     padding: 14px 24px;
-    
+
     h4 {
       font-size: 1.4rem;
       font-weight: bold;
