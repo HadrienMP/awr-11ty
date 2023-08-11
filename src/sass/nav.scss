@@ -3,7 +3,6 @@
 #main-nav {
   display: flex;
   align-items: center;
-  background: var(--color-secondary);
 
   @media (max-width: $nav-layout-switch) {
     a {
@@ -24,8 +23,8 @@
 }
 
 nav {
-  top: 0;
   padding: var(--space-s);
+  background: var(--color-secondary);
   a {
     margin: 0;
     margin-left: var(--space-m);

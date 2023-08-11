@@ -19,7 +19,7 @@ $style-change-width: 600px;
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: white;
+      background: var(--color-secondary);
       text-align: center;
       border-top: 2px solid var(--color-secondary);
       padding-top: 3vh;
@@ -64,6 +64,8 @@ $style-change-width: 600px;
 }
 
 #simulation {
+  color: var(--color-text);
+  width: 100%;
   .workflow-links {
     display: flex;
     flex-wrap: wrap;
@@ -72,7 +74,7 @@ $style-change-width: 600px;
     button {
       flex-grow: 1;
       border-radius: 0;
-      border: 1px solid var(--color-accent);
+      border: 1px solid var(--color-secondary);
       background: var(--color-secondary);
       font-family: Raleway, sans-serif;
       padding: 10px;
@@ -80,8 +82,8 @@ $style-change-width: 600px;
       font-size: 1em;
 
       &.active {
-        background: var(--color-accent);
-        color: white;
+        background: var(--color-secondary-light);
+        color: var(--color-on-secondary);
         font-weight: bold;
       }
     }
@@ -91,7 +93,7 @@ $style-change-width: 600px;
     padding-top: 30px;
 
     button {
-      border: 1px solid var(--color-accent);
+      border: 1px solid var(--color-secondary);
       background: var(--color-secondary);
       padding: 10px 20px;
       @include font();
@@ -101,8 +103,8 @@ $style-change-width: 600px;
       float: right;
 
       &:hover {
-        color: white;
-        background: var(--color-accent);
+        color: var(--color-on-secondary);
+        background: var(--color-secondary-light);
         font-weight: bold;
       }
       &.discret {
@@ -111,7 +113,7 @@ $style-change-width: 600px;
         text-decoration: underline;
         margin-top: 0;
         &:hover {
-          color: black;
+          color: var(--color-text);
         }
       }
     }
@@ -127,8 +129,8 @@ $style-change-width: 600px;
     }
 
     .call-to-action {
-      border: 1px solid var(--color-accent);
-      background: var(--color-secondary);
+      border: none;
+      background: var(--color-accent);
       padding: 10px 20px;
       @include font();
       font-size: 1.1em;
@@ -143,8 +145,8 @@ $style-change-width: 600px;
       }
 
       &:hover {
-        background: var(--color-accent);
-        color: var(--color-on-accent);
+        background: var(--color-accent-light);
+        color: var(--color-on-secondary);
         font-weight: bold;
       }
     }
@@ -196,13 +198,14 @@ $style-change-width: 600px;
       min-width: 25%;
       margin-left: 1%;
       margin-bottom: 5px;
-      border: 1px solid var(--color-accent);
+      border: 1px solid var(--color-secondary);
       cursor: pointer;
+      transition: background 0.4s;
 
       &:hover {
         .image-title {
-          background: var(--color-accent);
-          color: var(--color-on-accent);
+          background: var(--color-secondary-light);
+          color: var(--color-on-secondary);
           font-weight: bold;
         }
       }
@@ -218,8 +221,8 @@ $style-change-width: 600px;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 5em;
-        color: var(--color-accent);
-        background-color: var(--color-on-accent);
+        color: var(--color-secondary);
+        background-color: var(--color-on-secondary);
         border-radius: 50%;
       }
 
@@ -231,13 +234,17 @@ $style-change-width: 600px;
 
       img {
         width: 100%;
-        border-top: 1px solid var(--color-accent);
+        border-top: 1px solid var(--color-secondary);
       }
     }
   }
 
   .estimation:after {
     content: " : ";
+  }
+
+  img {
+    border-radius: 0;
   }
 
   .prix {
