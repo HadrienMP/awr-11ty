@@ -17,6 +17,7 @@
             yarn
             nodePackages.gitmoji-cli
           ];
+          shellHook = "just install";
         };
       });
 }
