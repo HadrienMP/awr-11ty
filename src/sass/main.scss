@@ -42,6 +42,8 @@ html {
   height: 100%;
   background: var(--color-secondary);
   font-size: var(--size-s);
+
+  text-align: justify;
 }
 
 a.cta {
@@ -78,9 +80,7 @@ body {
 
 main {
   flex-grow: 1;
-  @media screen and (max-width: 800px) {
-    padding: var(--space-s);
-  }
+  padding: var(--space-s);
 }
 
 a {
