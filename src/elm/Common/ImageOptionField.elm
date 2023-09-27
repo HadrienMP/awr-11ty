@@ -35,9 +35,6 @@ displayOne { current, onChange } { fieldId, value, labelString, image, prix } =
         [ for fieldId ]
         [ div [ class "image-caption" ]
             [ p [ class "image-title", classList [ ( "selected", selected ) ] ] [ text labelString ]
-            , prix
-                |> Maybe.map (\it -> p [ class "prix" ] [ Html.text it ])
-                |> Maybe.withDefault (Html.text "")
             ]
         , img [ alt labelString, src image ] []
         , i [ class "fas fa-check-circle", classList [ ( "show", selected ) ] ] []

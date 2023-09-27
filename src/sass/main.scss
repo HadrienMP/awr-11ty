@@ -255,9 +255,15 @@ footer {
     $width $inv-size $blur black, $inv-size $width $blur black;
 }
 
-button {
+button,
+a {
   color: var(--color-text);
-  transition: background 0.4s;
+  transition-property: background text-shadow;
+  transition-duration: 0.4s;
+}
+
+strong {
+  font-weight: bold;
 }
 
 @import "a-propos";

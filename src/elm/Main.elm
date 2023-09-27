@@ -221,7 +221,10 @@ surfaceFields : Surface -> TaillesRanges -> List (Html Msg)
 surfaceFields surface { largeurs, longueurs } =
     [ h2 [] [ text "Dimensions du plateau" ]
     , div [ class "range-field" ]
-        [ label [ for "longueur" ] [ text <| "Longueur: " ++ (centimetres surface.longueur |> String.fromInt) ++ " cm" ]
+        [ label [ for "longueur" ]
+            [ text <| "Longueur: "
+            , Html.strong [] [ Html.text <| (centimetres surface.longueur |> String.fromInt) ++ " cm" ]
+            ]
         , input
             [ id "longueur"
             , type_ "range"
@@ -234,7 +237,10 @@ surfaceFields surface { largeurs, longueurs } =
             []
         ]
     , div [ class "range-field" ]
-        [ label [ for "largeur" ] [ text <| "Largeur: " ++ (centimetres surface.largeur |> String.fromInt) ++ " cm" ]
+        [ label [ for "largeur" ]
+            [ text <| "Largeur: "
+            , Html.strong [] [ text <| (centimetres surface.largeur |> String.fromInt) ++ " cm" ]
+            ]
         , input
             [ id "largeur"
             , type_ "range"

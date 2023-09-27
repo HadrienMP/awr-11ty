@@ -105,7 +105,7 @@ $style-change-width: 600px;
       &:hover {
         color: var(--color-on-secondary);
         background: var(--color-secondary-light);
-        font-weight: bold;
+        text-shadow: 1px 0 0 var(--color-on-secondary);
       }
       &.discret {
         border: none;
@@ -147,7 +147,7 @@ $style-change-width: 600px;
       &:hover {
         background: var(--color-accent-light);
         color: var(--color-on-secondary);
-        font-weight: bold;
+        text-shadow: 1px 0 0 var(--color-on-secondary);
       }
     }
   }
@@ -206,7 +206,7 @@ $style-change-width: 600px;
         .image-caption {
           background: var(--color-secondary-light);
           color: var(--color-on-secondary);
-          font-weight: bold;
+          text-shadow: 1px 0 0 var(--color-on-secondary);
         }
       }
 
@@ -277,5 +277,11 @@ $style-change-width: 600px;
     &.image-title {
       margin-top: 0;
     }
+  }
+}
+
+.range-field {
+  label {
+    display: block;
   }
 }
