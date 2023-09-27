@@ -16,16 +16,16 @@ essence value =
             Euros 1150
 
         Frene ->
-            Euros 1092.5
+            Euros 1093
 
         Noyer ->
-            Euros 1207.5
+            Euros 1208
 
         Prestige ->
             Euros 1265
 
         Exotique ->
-            Euros 1207.5
+            Euros 1208
 
 
 pietement : TableType -> Pietement -> Prix
@@ -37,12 +37,12 @@ pietement typeDeTable typePietement =
                     Euros 276
 
                 Central ->
-                    Euros 356.6
+                    Euros 357
 
         TableAManger ->
             case typePietement of
                 BoutDeTable ->
-                    Euros 256.5
+                    Euros 257
 
                 Central ->
                     Euros 644

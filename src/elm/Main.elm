@@ -5,10 +5,13 @@ import Common.ImageOptionField as ImageOptionField
 import Common.Mesures exposing (Ligne(..), TaillesRanges, centimetres, fromCentimetres)
 import Common.Prix as Prix
 import Common.Surface exposing (Surface)
-import Elements.Essence as Essence exposing (Essence(..))
-import Elements.Pietement as Pietement exposing (Pietement)
+import Elements.Essence exposing (Essence(..))
+import Elements.EssenceView as EssenceView
+import Elements.Pietement exposing (Pietement)
+import Elements.PietementView as PietementView
 import Elements.Table as Table exposing (Table)
 import Elements.Type as Type exposing (TableType)
+import Elements.TypeView
 import Form exposing (Form)
 import Html exposing (Html, a, button, div, h2, i, input, label, li, p, span, text, ul)
 import Html.Attributes exposing (class, classList, for, href, id, step, type_, value)
@@ -19,6 +22,7 @@ import Html.Events exposing (onClick, onInput)
 -- MAIN
 
 
+main : Program () Model Msg
 main =
     Browser.element
         { init = init
@@ -44,6 +48,7 @@ type Model
     | Estimation Table
 
 
+formulaireVide : Model
 formulaireVide =
     Form Type
         { type_ = Nothing
@@ -143,7 +148,7 @@ view model =
                                     { current = form.type_
                                     , onChange = TableTypeChanged
                                     }
-                                    Type.fields
+                                    Elements.TypeView.fields
                                 )
                             ]
 
@@ -154,7 +159,7 @@ view model =
                                     { current = form.essence
                                     , onChange = EssenceChanged
                                     }
-                                    Essence.fields
+                                    EssenceView.fields
                                 )
                             ]
 
@@ -168,7 +173,7 @@ view model =
                                     { current = form.pietement
                                     , onChange = PositionPietementChanged
                                     }
-                                    Pietement.fields
+                                    (PietementView.fields (form.type_ |> Maybe.withDefault Type.TableAManger))
                                 )
                             ]
                     )

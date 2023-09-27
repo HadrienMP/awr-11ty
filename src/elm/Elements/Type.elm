@@ -1,6 +1,5 @@
 module Elements.Type exposing (..)
 
-import Common.ImageOptionField as ImageOptionField
 import Common.Mesures exposing (Ligne(..), TaillesRanges)
 
 
@@ -11,26 +10,12 @@ type TableType
 
 toString : TableType -> String
 toString tableType =
-    tableTypeField tableType |> .labelString
+    case tableType of
+        TableBasse ->
+            "Table basse"
 
-
-fields : List (ImageOptionField.Model TableType)
-fields =
-    [ TableAManger, TableBasse ] |> List.map tableTypeField
-
-
-tableTypeField : TableType -> ImageOptionField.Model TableType
-tableTypeField tableType =
-    let
-        ( fieldId, labelString, image ) =
-            case tableType of
-                TableBasse ->
-                    ( "basse", "Table basse", "/images/simulation/table-basse.jpg" )
-
-                TableAManger ->
-                    ( "a-manger", "Table à manger", "/images/simulation/table-a-manger.jpg" )
-    in
-    ImageOptionField.Model fieldId labelString image tableType
+        TableAManger ->
+            "Table à manger"
 
 
 tailles : TableType -> TaillesRanges
