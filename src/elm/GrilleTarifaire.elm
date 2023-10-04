@@ -22,7 +22,7 @@ essence value =
             Euros 1208
 
         Prestige ->
-            Euros 1265
+            Euros 1392
 
         Exotique ->
             Euros 1208
